@@ -3,14 +3,16 @@ import st_tailwind as tw
 from ai_chat_bot.chat_bot import chat_bot 
 
 def main():
+    st.set_page_config(
+        page_title="AI Chat Bot App By Abdullah Shaikh"
+    )
     if "prompt" not in st.session_state:
         st.session_state.prompt = ""
 
     if "response" not in st.session_state:
         st.session_state.response = ""
 
-
-    st.html(f"""<h1 style='font-size: 30px; color: black; margin-top: 2px;'>Chatbot App By <a href="https://www.linkedin.com/in/abdullah-shaikh-29699b302/" target="_blank" style="color:blue";>Abdullah Shaikh</a></h1>
+    st.html(f"""<h1 style='font-size: 30px; color: black; margin-top: 2px;'>AI Chatbot App By <a href="https://www.linkedin.com/in/abdullah-shaikh-29699b302/" target="_blank" style="color:blue";>Abdullah Shaikh</a></h1>
     """)
     st.write(st.session_state.response)
     st.session_state.prompt = tw.text_input(label="", placeholder="Enter Your Prompt",classes="mt-[370px]")
